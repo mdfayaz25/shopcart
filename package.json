@@ -2,20 +2,27 @@
   "name": "shopcart",
   "version": "1.0.0",
   "private": true,
-  "description": "ShopCart — a full-stack MERN e-commerce platform with cart, checkout, orders and an admin dashboard.",
+  "description": "ShopCart \u2014 a full-stack MERN e-commerce platform with cart, checkout, orders and an admin dashboard.",
   "author": "Mohammed Fayaz <kmdfayaz25@gmail.com>",
   "license": "MIT",
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "dev": "concurrently -k -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
     "build": "npm run build -w server && npm run build -w client",
     "start": "NODE_ENV=production npm start -w server",
     "seed": "npm run seed -w server",
     "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
-    "test": "npm test -w server"
+    "test": "npm test -w server",
+    "demo:seed": "npm run seed -w server && DEMO_PASSWORDS='{\"admin@shopcart.dev\":\"Admin@123\",\"demo@shopcart.dev\":\"Demo@1234\"}' npm run demo:export -w server",
+    "build:pages": "VITE_DEMO=true VITE_BASE=/shopcart/ npm run build -w client && cp client/dist/index.html client/dist/404.html && touch client/dist/.nojekyll"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

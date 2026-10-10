@@ -4,6 +4,9 @@
 
 **A full-stack MERN e-commerce platform** — product catalog, cart, checkout with a payment step, order tracking and an admin dashboard.
 
+### [▶ Open the live demo](https://mdfayaz25.github.io/shopcart/)
+
+
 ![React](https://img.shields.io/badge/React_18-20232A?logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?logo=redux&logoColor=white)
@@ -15,6 +18,16 @@
 ![ShopCart home page](docs/screenshots/home.png)
 
 </div>
+
+## Live demo
+
+**[https://mdfayaz25.github.io/shopcart/](https://mdfayaz25.github.io/shopcart/)**
+
+The live demo is a static build of the same React app hosted on GitHub Pages. Because Pages can't run Node or MongoDB, the demo build swaps the HTTP and WebSocket layer for an in-browser backend (`client/src/demo/`) that implements the same REST routes and realtime events over sample data exported from the seed script. Everything you do is saved in your browser's localStorage; **Reset demo** in the top bar restores the sample data.
+
+Sign in with Shopper `demo@shopcart.dev` / `Demo@1234` · Admin `admin@shopcart.dev` / `Admin@123` (one-click buttons on the sign-in page). Pay with test card `4242 4242 4242 4242`.
+
+Build it yourself with `npm run build:pages` (output in `client/dist`). The `Deploy live demo` workflow publishes it to the `gh-pages` branch on every push to `main`.
 
 ## Features
 
